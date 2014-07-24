@@ -10,6 +10,9 @@ Utility and Helpers
 
 def read_projects_from_json(projects_file):
     file_handler = os.path.join('.', projects_file)
-    with open(file_handler) as json_file:
-        projects = json.load(json_file)
+    try:
+        with open(file_handler) as json_file:
+            projects = json.load(json_file)
+    except Exception:
+        return False
     return projects

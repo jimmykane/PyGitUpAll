@@ -19,6 +19,10 @@ class GitUpAll(object):
 
         current_dir = os.getcwd()
         projects = read_projects_from_json(PROJECTS_FILE)
+        if not projects:
+            print(colored("Could not read ", color="red") + colored(PROJECTS_FILE, color="red", attrs=['bold']))
+            return False
+
         print(colored("Loaded projects from ", attrs=['bold']) + colored(PROJECTS_FILE, color="green"))
 
         for project_name, project_settings in projects.iteritems():
@@ -31,6 +35,8 @@ class GitUpAll(object):
             os.chdir(project_settings['absolute_path'])
             self.sync_repository(project_settings)
             os.chdir(current_dir)
+            print(colored('Done with: ', color="green", attrs=['bold']) + colored(str(project_name), attrs=['underline']))
+
 
 
     @staticmethod
