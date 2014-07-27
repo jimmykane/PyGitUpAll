@@ -4,10 +4,10 @@
 import sys
 import os
 
-from utils import read_projects_from_json
 from git import Repo
 from PyGitUp.git_wrapper import GitError
 from PyGitUp.gitup import GitUp
+from PyGitUpAll.utils import read_projects_from_json
 from termcolor import colored
 
 
@@ -47,5 +47,8 @@ class GitUpAll(object):
             return False
 
 
-if __name__ == '__main__':
+def run():
     GitUpAll().git_up_all()
+
+if __name__ == '__main__':
+    run()

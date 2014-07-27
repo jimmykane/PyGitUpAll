@@ -16,7 +16,7 @@ setup(
     # Executable
     entry_points={
         'console_scripts': [
-            'git-up-all = gitupall:git_up_all'
+            'git-up-all = gitupall:run'
         ]
     },
 
