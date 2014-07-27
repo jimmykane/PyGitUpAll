@@ -5,9 +5,9 @@ setup(
     name="git-up-all",
     version="0.1",
     packages=find_packages(exclude=["tests"]),
-    scripts=['GitUpAll/gitupall.py'],
+    scripts=['PyGitUpAll/gitupall.py'],
     install_requires=['GitPython==0.3.2.RC1',# 'PyGitUp==v1.1.4',
-                      'termcolor==1.1.0', 'docopt==0.6.1'],
+                      'termcolor==1.1.0'],
 
     # Tests
     test_suite="nose.collector",
