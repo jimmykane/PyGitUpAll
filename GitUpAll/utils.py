@@ -13,6 +13,6 @@ def read_projects_from_json(projects_file):
     try:
         with open(file_handler) as json_file:
             projects = json.load(json_file)
-    except Exception:
+    except Exception as e:
         return False
     return projects

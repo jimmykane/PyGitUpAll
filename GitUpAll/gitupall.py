@@ -15,6 +15,7 @@ PROJECTS_FILE = 'projects.json'
 
 
 class GitUpAll(object):
+
     def git_up(self):
 
         current_dir = os.getcwd()
@@ -35,8 +36,7 @@ class GitUpAll(object):
             os.chdir(project_settings['absolute_path'])
             self.sync_repository(project_settings)
             os.chdir(current_dir)
-            print(colored('Done with: ', color="green", attrs=['bold']) + colored(str(project_name), attrs=['underline']))
-
+            print(colored('Repository updated', color="green", attrs=['bold']))
 
 
     @staticmethod
