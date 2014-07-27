@@ -1,0 +1,11 @@
+[report]
+omit =
+    */python?.?/*
+    */site-packages/nose/*
+    tests/*
+    __init__.py
+
+
+exclude_lines =
+    pragma: no cover
+    if self.testing:

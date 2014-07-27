@@ -1,2 +1,5 @@
 .idea
 *.pyc
+build
+dist
+git_up_all.egg-info

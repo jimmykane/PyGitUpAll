@@ -16,7 +16,7 @@ PROJECTS_FILE = 'projects.json'
 
 class GitUpAll(object):
 
-    def git_up(self):
+    def git_up_all(self):
 
         current_dir = os.getcwd()
         projects = read_projects_from_json(PROJECTS_FILE)
@@ -48,4 +48,4 @@ class GitUpAll(object):
 
 
 if __name__ == '__main__':
-    GitUpAll().git_up()
+    GitUpAll().git_up_all()
