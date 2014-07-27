@@ -6,7 +6,7 @@ setup(
     version="0.1",
     packages=find_packages(exclude=["tests"]),
     scripts=['PyGitUpAll/gitupall.py'],
-    install_requires=['GitPython==0.3.2.RC1',# 'PyGitUp==v1.1.4',
+    install_requires=['GitPython==0.3.2.RC1', 'git-up==1.1.4',
                       'termcolor==1.1.0'],
 
     # Tests
@@ -20,6 +20,7 @@ setup(
         ]
     },
 
+    dependency_links=['https://github.com/msiemens/PyGitUp/tarball/master#egg=PyGitUp-1.1.4'],
     zip_safe=False,
 
     # Metadata
