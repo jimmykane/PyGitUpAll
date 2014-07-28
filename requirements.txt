@@ -1,3 +1,3 @@
 GitPython==0.3.2.RC1
-PyGitUp==1.1.4
+git-up==1.1.4
 termcolor==1.1.0
