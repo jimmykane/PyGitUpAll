@@ -20,7 +20,6 @@ setup(
         ]
     },
 
-    dependency_links=['https://github.com/msiemens/PyGitUp/tarball/master#egg=PyGitUp-1.1.4'],
     zip_safe=False,
 
     # Metadata
