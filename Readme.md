@@ -1,2 +1,2 @@
-Git Up All
-----------
+PyGitUpAll |Build Status| |Coverage Status|
+===========================================
