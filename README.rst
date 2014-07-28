@@ -24,6 +24,7 @@ projects.json
 This file should contain a list with projects/repos as below:
 
 .. code-block:: javascript
+
     {
         "gitup": {
             "name": "PyGitUp",
@@ -36,7 +37,6 @@ This file should contain a list with projects/repos as below:
             "absolute_path": "/Users/jimmykane/projects/pygitupall"
         }
     }
-
 
 Version
 -------
