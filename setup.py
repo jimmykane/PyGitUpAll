@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="git-up-all",
-    version="0.1",
+    version="0.1.1",
     packages=find_packages(exclude=["tests"]),
     scripts=['PyGitUpAll/gitupall.py'],
     install_requires=['GitPython==0.3.2.RC1', 'git-up==1.1.4',
@@ -39,5 +39,5 @@ setup(
         "Topic :: Utilities"
     ],
 
-    long_description=open('README.md').read()
+    long_description=open('README.rst').read()
 )
