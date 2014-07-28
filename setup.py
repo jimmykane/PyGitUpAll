@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="git-up-all",
-    version="0.1.3",
+    version="0.1.4",
     packages=find_packages(exclude=["tests"]),
     scripts=['PyGitUpAll/gitupall.py'],
     install_requires=['GitPython==0.3.2.RC1', 'git-up==1.1.4',
@@ -29,7 +29,7 @@ setup(
     license="GPLv3",
     keywords="git git-up git-up-all",
     url="https://github.com/jimmykane/PyGitUpAll",
-    download_url='https://github.com/jimmykane/PyGitUpAll/tarball/0.1.3',
+    download_url='https://github.com/jimmykane/PyGitUpAll/tarball/0.1.4',
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Environment :: Console",
