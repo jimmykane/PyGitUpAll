@@ -3,12 +3,22 @@ PyGitUpAll |Build Status|
 
 Git-Up all your projects!
 
-How this works
---------------
+Why use ``git-up-all`` ?
+------------------
 
-``git-up-all`` requires a projects.json containing a list of projects/repos to keep update
-Running git-up-all will go to each project/repo and try to git-up and report back with
-the results for each project.
+ - Tired of going into each repo and pulling/rebasing/stashing in order to update
+ - Tired of updating all braches?
+
+ Well that's why.
+
+How it works
+------------
+
+ 1. Reads a json file containing the list of repos you want to keep update
+ (can also be sourced controlled)
+ 2. Iterates over each folder containing the repos provided and executes git-up as a module
+ 3. Prints results for each repo
+
 
 Setup
 -----
@@ -41,6 +51,13 @@ This file should contain a list with projects/repos as below:
 Version
 -------
 This is a pre-release. It's packaged for testing purposes only.
+
+Acknowledgements
+----------------
+
+Thanks to the original port of GitUp in python (PyGitUp) by msiemens
+
+ - git: https://github.com/msiemens/PyGitUp.git"
 
 .. |Build Status| image:: https://travis-ci.org/jimmykane/PyGitUpAll.svg?branch=master
    :target: https://travis-ci.org/jimmykane/PyGitUpAll
