@@ -57,7 +57,7 @@ Acknowledgements
 
 Thanks to the original port of GitUp in python (PyGitUp) by msiemens
 
- - git: https://github.com/msiemens/PyGitUp.git"
+ - git: https://github.com/msiemens/PyGitUp.git
 
 .. |Build Status| image:: https://travis-ci.org/jimmykane/PyGitUpAll.svg?branch=master
    :target: https://travis-ci.org/jimmykane/PyGitUpAll
