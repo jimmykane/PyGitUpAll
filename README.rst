@@ -4,7 +4,7 @@ PyGitUpAll |Build Status|
 Git-Up all your projects!
 
 Why use ``git-up-all`` ?
-------------------
+------------------------
 
  - Tired of going into each repo and pulling/rebasing/stashing in order to update
  - Tired of updating all braches?
