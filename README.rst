@@ -14,10 +14,11 @@ Why use ``git-up-all`` ?
 How it works
 ------------
 
- 1. Reads a json file containing the list of repos you want to keep update
- (can also be sourced controlled)
- 2. Iterates over each folder containing the repos provided and executes git-up as a module
- 3. Prints results for each repo
+1. Reads a json file containing the list of repos you want to keep update (can also be sourced controlled)
+
+2. Iterates over each folder containing the repos provided and executes git-up as a module
+
+3. Prints results for each repo
 
 
 Setup
