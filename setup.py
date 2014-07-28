@@ -28,7 +28,7 @@ setup(
     description="Run git-up trough a json list of repos",
     license="GPLv3",
     keywords="git git-up git-up-all",
-    url="",
+    url="https://github.com/jimmykane/PyGitUpAll",
     classifiers=[
         "Development Status :: 1 - Production/Unstable",
         "Environment :: Console",
