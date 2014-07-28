@@ -31,10 +31,10 @@ setup(
     url="https://github.com/jimmykane/PyGitUpAll",
     download_url='https://github.com/jimmykane/PyGitUpAll/tarball/0.1',
     classifiers=[
-        "Development Status :: 1 - Production/Unstable",
+        "Development Status :: 2 - Pre-Alpha",
         "Environment :: Console",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: GNU General Public License v3",
+        "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         "Topic :: Software Development :: Version Control",
         "Topic :: Utilities"
     ],
