@@ -39,5 +39,5 @@ setup(
         "Topic :: Utilities"
     ],
 
-    long_description=open('README.md').read()
+    long_description=open('Readme.md').read()
 )
