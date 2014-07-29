@@ -10,8 +10,6 @@ Why use ``git-up-all`` ?
  - Tired of updating all branches over all the repos you have following the above tactics?
  - Need one custom action for sourcetree for eg?
 
- Well that's why.
-
 How it works
 ------------
 
