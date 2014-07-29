@@ -17,9 +17,10 @@ PROJECTS_FILE = 'projects.json'
 
 class GitUpAll(object):
 
+    start_dir = os.getcwd()
+
     def git_up_all(self):
 
-        start_dir = os.getcwd()
         projects = read_projects_from_json(PROJECTS_FILE)
         if not projects:
             print(colored("Could not read ", color="red") + colored(PROJECTS_FILE, color="red", attrs=['bold']))
@@ -28,37 +29,48 @@ class GitUpAll(object):
         print(colored("Loaded projects from ", attrs=['bold']) + colored(PROJECTS_FILE, color="green"))
 
         for project_name, project_settings in projects.iteritems():
+            # Check if we are able to initialize settings to an object
             project = Project(project_settings)
-            print(
-                colored('- Working on: ', attrs=['bold']) + colored(
-                    str(project_name + " " + project_settings['absolute_path']),
-                    attrs=['underline']))
+            print(colored('- Working on: ' + project.name + " @" + project.absolute_path, attrs=['underline']))
+            if not project:
+                print (colored("Could not create project " + project_name, color='red'))
+                continue
 
-
-            repo = None
-
-            # Check if the directory exists and try to clone the repo
-            if not os.path.isdir(project_settings['absolute_path']) or not is_git_dir(os.path.join(start_dir, '.git')):
+            # Check if a dir exists or clone
+            if not os.path.isdir(project.absolute_path):
                 print ("Project is not directory or not initialized repo. Cloning from url")
-                repo = Repo.clone_from(url=project_settings['git_url'], to_path=project_settings['absolute_path'])
+                project.repo = Repo.clone_from(url=project.git_url, to_path=project.absolute_path)
                 print (colored("Repository cloned", color='green'))
 
-            # Workaround for now
-            os.chdir(project_settings['absolute_path'])
-            # Check, if we're in a git repo
-            self.sync_repository(project_settings)
-            os.chdir(start_dir)
+
+            # Check if dir is empty and if yes clone
+            if os.listdir(project.absolute_path) == []:
+                print ("Project is not initialized repo. Cloning from url")
+                project.repo = Repo.clone_from(url=project.git_url, to_path=project.absolute_path)
+                print (colored("Repository cloned", color='green'))
+
+            # Check if the is not git and if not skip
+            if not is_git_dir(os.path.join(self.start_dir, '.git')):
+                print (colored("Project path is not a git dir and contains files. Skipping", color="red"))
+                continue
+
+            self.sync_repository(project)
+
             print(colored('Repository updated', color="green", attrs=['bold']))
 
 
-    @staticmethod
-    def sync_repository(project_settings):
+    @classmethod
+    def sync_repository(cls, project):
+
+        # ugly chdir. Will try to patch pygitup
+        os.chdir(project.absolute_path)
         try:
             # Creates a new object
             GitUp().run()
         except GitError:
-            print (colored("Could not update repository: " + project_settings['name'], color='red'))
-            return False
+            print (colored("Could not update repository: " + project.name, color='red'))
+        finally:
+            os.chdir(cls.start_dir)
 
 
 def run():
