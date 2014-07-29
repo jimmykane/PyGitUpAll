@@ -19,7 +19,6 @@ How it works
 
 3. Prints results for each repo
 
-
 Setup
 -----
 
