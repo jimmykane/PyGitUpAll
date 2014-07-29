@@ -6,15 +6,16 @@ Git-Up all your projects!
 Why use ``git-up-all`` ?
 ------------------------
 
- - Tired of going into each repo and pulling/rebasing/stashing in order to update
- - Tired of updating all braches?
+ - Tired of going into each repo and ``pulling/rebasing/stashing`` in order to update
+ - Tired of updating all branches over all the repos you have following the above tactics?
+ - Need one custom action for sourcetree for eg?
 
  Well that's why.
 
 How it works
 ------------
 
-1. Reads a json file containing the list of repos you want to keep update (can also be sourced controlled)
+1. Reads a json file containing the list of repos you want to keep updated (could also be sourced controlled)
 
 2. Iterates over each folder containing the repos provided and executes git-up as a module
 
@@ -49,9 +50,20 @@ This file should contain a list with projects/repos as below:
         }
     }
 
+
+@TODO
+-----
+
+- Check for branch ``origin`` validity
+- Patch ``PyGitUp`` to use dir paths as arguments let it do the chdir kind or the work is chdir is not needed
+- Add the tests finally
+- Rethink about structure and integration with ``PyGitUp``
+
+
 Version
 -------
-This is a pre-release. It's packaged for testing purposes only.
+This is a pre-release. I will start most of the work in this section after tests are done
+
 
 Acknowledgements
 ----------------
