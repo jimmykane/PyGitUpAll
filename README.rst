@@ -57,9 +57,19 @@ This file should contain a list with projects/repos as below:
 - Rethink about structure and integration with ``PyGitUp``
 
 
-Version
--------
-This is a pre-release. I will start most of the work in this section after tests are done
+Changelog
+---------
+
+v0.2.2.0 (*2014-08-01*)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- (BETA) Support for reading from SourceTree on OSX systems for now. Run with ``--sourcetree``
+- Logic fixes
+
+
+v0.2.0.1 (*2014-07-29*)
+~~~~~~~~~~~~~~~~~~~~~~~
+- This is a pre-release. I will start most of the work in this section after tests are done
 
 
 Acknowledgements
