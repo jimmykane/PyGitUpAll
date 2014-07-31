@@ -2,12 +2,14 @@
 # coding=utf-8
 
 import os
+import sys
+import docopt
 
 from git import Repo
 from git.repo.fun import is_git_dir
 from PyGitUp.git_wrapper import GitError
 from PyGitUp.gitup import GitUp
-from PyGitUpAll.utils import read_projects_from_json
+from PyGitUpAll.utils import read_projects_from_json, read_projects_from_sourcetree
 from PyGitUpAll.project import Project
 from termcolor import colored
 
@@ -19,14 +21,19 @@ class GitUpAll(object):
 
     start_dir = os.getcwd()
 
-    def git_up_all(self):
+    def git_up_all(self, sourcetree=False):
 
-        projects = read_projects_from_json(PROJECTS_FILE)
+        if sourcetree:
+            print(colored("Loading projects from ", attrs=["bold"]) + colored("SourceTree" + "\n", color="green"))
+            projects = read_projects_from_sourcetree()
+        else:
+            print(colored("Loading projects from ", attrs=["bold"]) + colored(PROJECTS_FILE + "\n", color="green"))
+            projects = read_projects_from_json(PROJECTS_FILE)
+
         if not projects:
-            print(colored("Could not read \n", color="red") + colored(PROJECTS_FILE, color="red", attrs=["bold"]))
+            print(colored("Could not read projects\n", color="red"))
             return False
 
-        print(colored("Loaded projects from ", attrs=["bold"]) + colored(PROJECTS_FILE + "\n", color="green"))
 
         for project_name, project_settings in projects.iteritems():
             # Check if we are able to initialize settings to an object
@@ -74,7 +81,10 @@ class GitUpAll(object):
 
 
 def run():
-    GitUpAll().git_up_all()
+    if '--sourcetree' in sys.argv:
+        GitUpAll().git_up_all(sourcetree=True)
+    else:
+        GitUpAll().git_up_all(sourcetree=False)
 
 
 if __name__ == "__main__":
