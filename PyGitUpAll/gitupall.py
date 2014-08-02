@@ -66,7 +66,6 @@ class GitUpAll(object):
                 results.update({project.name: False})
             print(colored("- Finished on: " + project.name + " @" + project.absolute_path, attrs=["underline"]) + "\n")
 
-
         self.print_results(results)
 
 
@@ -92,16 +91,16 @@ class GitUpAll(object):
         fails = 0
         for name, success in results.iteritems():
             if success:
-                print (colored(name, color="green"))
+                print (name + colored(" Updated", color="green"))
                 successes += 1
             else:
-                print (colored(name, color="red"))
+                print (name + colored(" Failed", color="red"))
                 fails += 1
 
         print(colored("Total: " + str(total) + " projects", attrs=['bold'], color="green"))
         print(colored("Successful: " + str(successes) + " projects", attrs=['bold'], color="green"))
         print(colored("Fails: " + str(fails) + " projects", attrs=['bold'], color="red"))
-        print(colored("Ration: " + str(float(successes)/float(total) * 100.0)[:4] + "% success", attrs=['underline'], color="green"))
+        print(colored("Ratio: " + str(float(successes)/float(total) * 100.0)[:4] + "% success", attrs=['underline'], color="green"))
 
 
 
