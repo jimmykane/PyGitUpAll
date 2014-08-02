@@ -19,7 +19,8 @@ PROJECTS_FILE = "projects.json"
 
 class GitUpAll(object):
 
-    start_dir = os.getcwd()
+    def __init__(self):
+        self.start_dir = os.getcwd()
 
     def git_up_all(self, sourcetree=False):
 
@@ -34,6 +35,7 @@ class GitUpAll(object):
             print(colored("Could not read projects\n", color="red"))
             return False
 
+        results = {}
         for project_name, project_settings in projects.iteritems():
 
             """
@@ -58,23 +60,51 @@ class GitUpAll(object):
                 continue
 
             # @todo probably should be moved
-            self.sync_repository(project)
+            if self.sync_repository(project):
+                results.update({project.name: True})
+            else:
+                results.update({project.name: False})
+            print(colored("- Finished on: " + project.name + " @" + project.absolute_path, attrs=["underline"]) + "\n")
 
-            print(colored("Repository " + project.name + " updated\n", color="green", attrs=["bold"]))
+
+        self.print_results(results)
 
 
-    @classmethod
-    def sync_repository(cls, project):
+    def sync_repository(self, project):
 
+        result = False
         # ugly chdir. Will try to patch pygitup
         os.chdir(project.absolute_path)
         try:
-            # Creates a new object
+            # Creates a new object all the time
             GitUp().run()
+            result = True
         except (GitError, exc.GitCommandError, BaseException) as e:
             print (colored("Could not update repository: " + project.name, color="red"))
         finally:
-            os.chdir(cls.start_dir)
+            os.chdir(self.start_dir)
+            return result
+
+
+    def print_results(self, results):
+        total = len(results)
+        successes = 0
+        fails = 0
+        for name, success in results.iteritems():
+            if success:
+                print (colored(name, color="green"))
+                successes += 1
+            else:
+                print (colored(name, color="red"))
+                fails += 1
+
+        print(colored("Total: " + str(total) + " projects", attrs=['bold'], color="green"))
+        print(colored("Successful: " + str(successes) + " projects", attrs=['bold'], color="green"))
+        print(colored("Fails: " + str(fails) + " projects", attrs=['bold'], color="red"))
+        print(colored("Ration: " + str(float(successes)/float(total) * 100.0)[:4] + "% success", attrs=['underline'], color="green"))
+
+
+
 
 
 def run():
