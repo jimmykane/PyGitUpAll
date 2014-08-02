@@ -49,7 +49,8 @@ class GitUpAll(object):
             print(colored("- Working on: " + project.name + " @" + project.absolute_path, attrs=["underline"]))
 
             # Check if a dir exists or clone
-            if (not os.path.isdir(project.absolute_path) or os.listdir(project.absolute_path) == []) and project.git_url:
+            if (not os.path.isdir(project.absolute_path) or os.listdir(
+                    project.absolute_path) == []) and project.git_url:
                 print ("Project is not directory or not initialized repo. Cloning from url")
                 project.repo = Repo.clone_from(url=project.git_url, to_path=project.absolute_path)
                 print (colored("Repository cloned", color="green"))
@@ -100,10 +101,8 @@ class GitUpAll(object):
         print(colored("Total: " + str(total) + " projects", attrs=['bold'], color="green"))
         print(colored("Successful: " + str(successes) + " projects", attrs=['bold'], color="green"))
         print(colored("Fails: " + str(fails) + " projects", attrs=['bold'], color="red"))
-        print(colored("Ratio: " + str(float(successes)/float(total) * 100.0)[:4] + "% success", attrs=['underline'], color="green"))
-
-
-
+        print(colored("Ratio: " + str(float(successes) / float(total) * 100.0)[:4] + "% success", attrs=['underline'],
+                      color="green"))
 
 
 def run():
