@@ -19,15 +19,14 @@ How it works
 
 3. Prints results for each repo
 
-- Note that it will skip any fails and leaves it up to the user to manually resolve the conflicts. Currently it wont check if the repo is inside arebse or no.
-
+- Note that it will skip any fails and leaves it up to the user to manually resolve the conflicts.
 
 Setup
 -----
 
  - Install via ``pip install git-up-all``
- - Create a ``projects.json`` containing a list of projects (see example below)
- - Run ``git-up-all`` on that folder containing the projects.json
+ - Create a ``projects.json`` containing a list of projects (see example below) or use ``--sourcetree``
+ - Run ``git-up-all`` on that folder containing the projects.json or use ``--sourcetree``
 
 
 projects.json
