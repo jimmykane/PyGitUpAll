@@ -55,8 +55,14 @@ This file should contain a list with projects/repos as below:
 Changelog
 ---------
 
-v0.3.0 (*2014-08-01*)
+v0.3.1.1 (*2014-08-03*)
 ~~~~~~~~~~~~~~~~~~~~~~~
+
+- Add results printing
+- Some help is needed with the windows version of the SourceTree config file
+
+v0.3.0 (*2014-08-01*)
+~~~~~~~~~~~~~~~~~~~~~
 
 - (BETA) Support for reading from SourceTree on OSX systems for now. Run with ``--sourcetree``
 - Logic fixes
