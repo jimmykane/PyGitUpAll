@@ -34,7 +34,6 @@ class GitUpAll(object):
             print(colored("Could not read projects\n", color="red"))
             return False
 
-
         for project_name, project_settings in projects.iteritems():
 
             """
@@ -58,6 +57,7 @@ class GitUpAll(object):
                 print (colored("Project path is not a git dir and has no info. Skipping", color="red"))
                 continue
 
+            # @todo probably should be moved
             self.sync_repository(project)
 
             print(colored("Repository " + project.name + " updated\n", color="green", attrs=["bold"]))
@@ -71,7 +71,7 @@ class GitUpAll(object):
         try:
             # Creates a new object
             GitUp().run()
-        except (GitError, exc.GitCommandError) as e:
+        except (GitError, exc.GitCommandError, BaseException) as e:
             print (colored("Could not update repository: " + project.name, color="red"))
         finally:
             os.chdir(cls.start_dir)
