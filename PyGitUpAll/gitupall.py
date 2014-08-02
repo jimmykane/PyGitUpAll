@@ -39,7 +39,7 @@ class GitUpAll(object):
         for project_name, project_settings in projects.iteritems():
 
             """
-            This nees to be rewritten and tested!
+            This needs to be rewritten and tested!
             """
             # Check if we are able to initialize settings to an object
             project = Project(project_settings)
