@@ -70,7 +70,7 @@ v0.2.0.1 (*2014-07-29*)
 @TODO
 -----
 
-- Check repo status (rebase etc)
+- Need help to find how to parse windows SourceTree files!!!
 - Check for branch ``origin`` validity
 - Patch ``PyGitUp`` to use dir paths as arguments let it do the chdir kind or the work is chdir is not needed
 - Add the tests finally
