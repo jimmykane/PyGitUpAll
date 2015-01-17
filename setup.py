@@ -25,7 +25,7 @@ setup(
     # Metadata
     author="Dimitrios Kanellopoulos",
     author_email="jimmykane9@gmail.com",
-    description="Run git-up trough a json list of repos",
+    description="Run git-up through a json list of repos",
     license="GPLv3",
     keywords="git git-up git-up-all",
     url="https://github.com/jimmykane/PyGitUpAll",
