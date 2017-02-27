@@ -1,1 +1,2 @@
 git-up==1.4.1
+biplist==0.7
