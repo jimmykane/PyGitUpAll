@@ -1,2 +1,4 @@
-git-up==1.4.1
+GitPython==0.3.2.RC1
+git-up==1.1.4
+termcolor==1.1.0
 biplist==0.7

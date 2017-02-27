@@ -3,10 +3,11 @@ from setuptools import setup, find_packages
 
 setup(
     name="git-up-all",
-    version="0.3.2.4",
+    version="0.3.2.5",
     packages=find_packages(exclude=["tests"]),
     scripts=['PyGitUpAll/gitupall.py'],
-    install_requires=['git-up==1.4.1', 'biplist==0.7'],
+    install_requires=['git-up==1.4.1', 'biplist==0.7',
+                      'termcolor==1.1.0'],
 
     # Tests
     test_suite="nose.collector",
@@ -28,7 +29,7 @@ setup(
     license="GPLv3",
     keywords="git git-up git-up-all",
     url="https://github.com/jimmykane/PyGitUpAll",
-    download_url='https://github.com/jimmykane/PyGitUpAll/tarball/master/0.3.2.4',
+    download_url='https://github.com/jimmykane/PyGitUpAll/tarball/master/0.3.2.5',
     classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Console",
