@@ -28,7 +28,7 @@ setup(
     license="GPLv3",
     keywords="git git-up git-up-all",
     url="https://github.com/jimmykane/PyGitUpAll",
-    download_url='https://github.com/jimmykane/PyGitUpAll/tarball/master/0.3.2.1',
+    download_url='https://github.com/jimmykane/PyGitUpAll/tarball/master/0.3.2.3',
     classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Console",
