@@ -6,8 +6,13 @@ setup(
     version="0.3.2.5",
     packages=find_packages(exclude=["tests"]),
     scripts=['PyGitUpAll/gitupall.py'],
-    install_requires=['git-up==1.4.1', 'biplist==0.7',
-                      'termcolor==1.1.0'],
+    install_requires=[
+        'GitPython==2.1.1',
+        'git-up==1.4.1',
+        'biplist==0.7',
+        'termcolor==1.1.0',
+        'colorama==0.3.7'
+    ],
 
     # Tests
     test_suite="nose.collector",

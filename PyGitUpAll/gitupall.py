@@ -3,7 +3,6 @@
 
 import os
 import sys
-import docopt
 
 from git import Repo, exc
 from git.repo.fun import is_git_dir
