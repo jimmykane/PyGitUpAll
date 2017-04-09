@@ -6,9 +6,9 @@ Git-Up all your projects!
 Why use ``git-up-all`` ?
 ------------------------
 
- - Tired of going into each repo and ``pulling/rebasing/stashing`` in order to update
- - Tired of updating all branches over all the repos you have following the above tactics?
- - Need one custom action for sourcetree for eg? Just add ``git-up-all --sourcetree`` and you are good to go
+- Tired of going into each repo and ``pulling/rebasing/stashing`` in order to update
+- Tired of updating all branches over all the repos you have following the above tactics?
+- Need one custom action for sourcetree for eg? Just add ``git-up-all --sourcetree`` and you are good to go
 
 How it works
 ------------
@@ -24,9 +24,9 @@ How it works
 Setup
 -----
 
- - Install via ``pip install git-up-all``
- - Create a ``projects.json`` containing a list of projects (see example below) or use ``--sourcetree``
- - Run ``git-up-all`` on that folder containing the projects.json or use ``--sourcetree``
+- Install via ``pip install git-up-all``
+- Create a ``projects.json`` containing a list of projects (see example below) or use ``--sourcetree``
+- Run ``git-up-all`` on that folder containing the projects.json or use ``--sourcetree``
 
 
 projects.json
