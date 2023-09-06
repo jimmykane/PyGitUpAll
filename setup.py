@@ -7,7 +7,7 @@ setup(
     packages=find_packages(exclude=["tests"]),
     scripts=['PyGitUpAll/gitupall.py'],
     install_requires=[
-        'GitPython==2.1.1',
+        'GitPython==3.1.34',
         'git-up==1.4.1',
         'biplist==0.7',
         'termcolor==1.1.0',
